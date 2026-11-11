@@ -1,0 +1,496 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Gelooo, homemade artisan gelato in Permas Jaya, Masai. Menu, opening hours and a free scoop voucher.">
+<meta property="og:title" content="Gelooo, homemade gelato in Permas Jaya">
+<meta property="og:description" content="Claim a free scoop, see today's sweet deal and our full menu.">
+<meta property="og:image" content="img/tiramisu-affogato.jpg">
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Gelooo Masai</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lobster&family=Chewy&family=Nunito:wght@500;700;800;900&display=swap">
+<style>
+/* Kind: place (a gelato cafe). Register: h5 wrapping brand.
+   Layout: photo-led single column on phones, two-column splits from 860px; flat grounds in the shop's own pink and cocoa;
+   one type moment (the promise, words light up as you read); sticky Call / WhatsApp / Directions bar. */
+:root{
+  --ground:#FBF1F3;      /* shop-wall blush */
+  --paper:#FFFAFB;
+  --band:#F6DDE5;        /* deeper blush band */
+  --ink:#382325;         /* cocoa */
+  --ink-soft:#7A5D61;
+  --line:#EBD3DA;
+  --accent:#D92F62;      /* logo outline pink, owns every action */
+  --on-accent:#FFF7F9;
+  --brand-teal:#3FAFC6;  /* logo fill only */
+  --ok:#2B8A5E;
+  --shade:rgba(120,36,64,.16);
+  --f-logo:"Lobster","Brush Script MT",cursive;
+  --f-display:"Chewy","Arial Rounded MT Bold","Trebuchet MS",sans-serif;
+  --f-body:"Nunito",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --r:14px;
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --ground:#1F1517;--paper:#2A1D20;--band:#36242A;--ink:#F7E9EC;--ink-soft:#C4A7AD;--line:#46313A;
+  --accent:#FF5C8A;--on-accent:#2A0E17;--brand-teal:#62CBE0;--ok:#56C891;--shade:rgba(0,0,0,.45);color-scheme:dark}}
+:root[data-theme="dark"]{
+  --ground:#1F1517;--paper:#2A1D20;--band:#36242A;--ink:#F7E9EC;--ink-soft:#C4A7AD;--line:#46313A;
+  --accent:#FF5C8A;--on-accent:#2A0E17;--brand-teal:#62CBE0;--ok:#56C891;--shade:rgba(0,0,0,.45);color-scheme:dark}
+
+*{box-sizing:border-box}
+html,body{overflow-x:clip}
+body{background:var(--ground);color:var(--ink);font-family:var(--f-body);font-weight:500;font-size:16px;line-height:1.55}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+section{padding-block:56px}
+h1,h2,h3{font-family:var(--f-display);font-weight:400;margin:0;line-height:1.05;text-wrap:balance;overflow-wrap:anywhere;min-width:0}
+h1{font-size:clamp(2.6rem,9vw,4.6rem)}
+h2{font-size:clamp(2rem,6.5vw,3rem)}
+h3{font-size:1.4rem}
+p{margin:0}
+.lede{color:var(--ink-soft);font-size:1.05rem;max-width:34em}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:6px}
+
+/* Buttons: one pair, step on hover, press on click */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:52px;padding:0 24px;border-radius:999px;font:900 1rem/1 var(--f-body);text-decoration:none;white-space:nowrap;cursor:pointer;border:2px solid var(--accent);transition:transform .25s var(--ease),box-shadow .25s var(--ease)}
+.btn-main{background:var(--accent);color:var(--on-accent)}
+.btn-alt{background:transparent;color:var(--ink);border-color:var(--ink)}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 18px -10px var(--shade)}
+.btn:active{transform:translateY(0) scale(.97)}
+.actions{display:flex;gap:10px;flex-wrap:wrap}
+
+/* Photo frames: square, zoom inside the frame on hover */
+.ph{position:relative;overflow:hidden;border-radius:var(--r);background:var(--band);aspect-ratio:1;max-width:100%}
+.ph img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s var(--ease)}
+.ph:hover img{transform:scale(1.03)}
+
+/* Hero */
+.hero{padding-top:28px;padding-bottom:40px}
+.hero-grid{display:grid;gap:26px;align-items:center}
+.logo{font-family:var(--f-logo);font-size:2.6rem;line-height:1;color:var(--brand-teal);-webkit-text-stroke:1.5px var(--accent);paint-order:stroke fill;margin-bottom:18px;display:block}
+.hero-copy{display:flex;flex-direction:column;gap:16px;min-width:0}
+.fact{display:flex;flex-wrap:wrap;gap:8px 18px;font-weight:800;font-size:.95rem}
+.fact span{display:inline-flex;align-items:center;gap:8px}
+.dot{width:10px;height:10px;border-radius:50%;background:var(--ink-soft);flex:none}
+.is-open .dot{background:var(--ok);box-shadow:0 0 0 4px color-mix(in srgb,var(--ok) 22%,transparent)}
+.hero .ph{border-radius:22px;box-shadow:0 24px 50px -30px var(--shade)}
+
+/* Voucher */
+.voucher{background:var(--band)}
+.v-grid{display:grid;gap:28px;align-items:center}
+.ticket{position:relative;background:var(--paper);border-radius:22px;box-shadow:0 20px 40px -28px var(--shade);min-width:0}
+.ticket::before,.ticket::after{content:"";position:absolute;top:var(--notch,62%);width:30px;height:30px;border-radius:50%;background:var(--band);transform:translateY(-50%)}
+.ticket::before{left:-15px}.ticket::after{right:-15px}
+.t-top{padding:26px 26px 22px;display:flex;flex-direction:column;gap:8px}
+.t-offer{font-size:clamp(2.1rem,8vw,2.8rem);color:var(--accent)}
+.t-worth{font-weight:900;font-size:1rem}
+.t-bot{border-top:2px dashed var(--line);padding:22px 26px 24px;display:flex;flex-direction:column;gap:14px}
+.code-row{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.code{font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;font-size:1.65rem;font-weight:700;letter-spacing:.08em}
+.until{font-weight:900;text-align:right}
+.count{font-variant-numeric:tabular-nums;color:var(--ink-soft);font-weight:700;font-size:.9rem;text-align:right}
+.show{background:var(--ink);color:var(--paper);border-radius:12px;padding:12px 14px;font-weight:900;text-align:center}
+.terms{margin:0;padding-left:18px;color:var(--ink-soft);font-size:.9rem}
+.staff{display:flex;gap:10px;align-items:center;flex-wrap:wrap;font-size:.85rem;color:var(--ink-soft)}
+.staff button{background:none;border:1.5px dashed var(--ink-soft);color:var(--ink-soft);border-radius:999px;padding:0 16px;min-height:44px;font:800 .85rem var(--f-body);cursor:pointer;white-space:nowrap}
+.staff button.armed{border-style:solid;border-color:var(--accent);color:var(--accent)}
+.ticket.done .t-offer{color:var(--ink-soft)}
+.ticket.done .show{background:var(--ink-soft)}
+.v-copy{display:flex;flex-direction:column;gap:14px;min-width:0}
+
+/* Promise: the type moment */
+.promise-line{font-family:var(--f-display);font-size:clamp(2.6rem,11vw,5.6rem);line-height:1;letter-spacing:.005em}
+.promise-line .w{color:var(--ink)}
+.js-moment .promise-line .w{color:color-mix(in srgb,var(--ink) 28%,var(--ground))}
+.pair{display:grid;gap:24px;margin-top:40px;align-items:center}
+.pair .ph{max-width:440px;width:100%}
+.flav-list{display:flex;flex-direction:column;gap:18px;min-width:0}
+.flav-list div{border-left:4px solid var(--accent);padding:2px 0 2px 14px}
+.flav-list b{display:block;font-size:1.15rem;font-weight:900}
+.flav-list span{color:var(--ink-soft)}
+
+/* Deal */
+.deal{background:var(--ink);color:var(--paper)}
+.deal .lede{color:color-mix(in srgb,var(--paper) 72%,var(--ink))}
+.deal-today{font-family:var(--f-display);font-size:clamp(1.8rem,6vw,2.6rem);line-height:1.1;margin-top:18px;color:var(--paper)}
+.deal-today em{font-style:normal;color:var(--accent)}
+.week{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:6px;margin-top:22px;max-width:560px}
+.week span{text-align:center;font-size:.78rem;font-weight:900;padding:9px 0;border-radius:10px;background:color-mix(in srgb,var(--paper) 10%,var(--ink));color:color-mix(in srgb,var(--paper) 70%,var(--ink))}
+.week span.today{background:var(--accent);color:var(--on-accent)}
+.week span.off{text-decoration:line-through;opacity:.6}
+.deal .small{margin-top:18px;font-size:.85rem;color:color-mix(in srgb,var(--paper) 62%,var(--ink));max-width:40em}
+
+/* Treats: photo grid */
+.treats-head{display:flex;flex-direction:column;gap:10px;margin-bottom:26px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.card{margin:0;display:flex;flex-direction:column;gap:8px;min-width:0}
+.meta{display:flex;justify-content:space-between;gap:8px;font-weight:800;font-size:.95rem}
+.meta b{font-weight:900;font-variant-numeric:tabular-nums;white-space:nowrap}
+.ph.tall{aspect-ratio:3/4}
+.hero-ph{max-width:460px;width:100%;justify-self:center}
+
+/* Drinks rail: swipe on phones, grid on wide screens */
+.drinks{padding-bottom:40px}
+.rail{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-left:max(16px,env(safe-area-inset-left,0px));
+  padding:4px max(16px,env(safe-area-inset-right,0px)) 12px max(16px,env(safe-area-inset-left,0px));scrollbar-width:thin;max-width:1120px;margin:0 auto}
+.rail .card{flex:0 0 min(72vw,280px);scroll-snap-align:start}
+
+/* Menu: one open list at a time, no tabs */
+.menu-list{display:flex;flex-direction:column;gap:10px;margin-top:26px}
+details{background:var(--paper);border-radius:var(--r);border:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:18px 20px;min-height:60px;font-family:var(--f-display);font-size:1.4rem}
+summary::-webkit-details-marker{display:none}
+summary .hint{font-family:var(--f-body);font-size:.85rem;font-weight:800;color:var(--ink-soft);white-space:nowrap}
+summary .chev{width:22px;height:22px;flex:none;transition:transform .3s var(--ease)}
+details[open] summary .chev{transform:rotate(180deg)}
+.rows{padding:0 20px 14px}
+.row{display:flex;align-items:baseline;gap:8px;padding:10px 0;border-top:1px solid var(--line)}
+.row .n{font-weight:800;min-width:0}
+.row .n small{display:block;font-weight:600;font-size:.84rem;color:var(--ink-soft)}
+.row .d{flex:1;min-width:12px}
+.row .p{font-weight:900;font-variant-numeric:tabular-nums;white-space:nowrap}
+.tag{display:inline-block;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;padding:2px 8px;border-radius:6px;background:var(--accent);color:var(--on-accent);vertical-align:2px;margin-left:6px}
+.sub{font-family:var(--f-body);font-weight:900;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);padding:16px 0 4px}
+
+/* Visit */
+.visit{background:var(--band)}
+.addr-big{font-family:var(--f-display);font-size:clamp(2.2rem,8.5vw,4rem);line-height:1.02}
+.v2{display:grid;gap:30px}
+.hours{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+.hours td{padding:11px 4px;border-bottom:1px solid var(--line)}
+.hours td:last-child{text-align:right;font-weight:800}
+.hours tr.today td{color:var(--accent);font-weight:900}
+.contact{display:flex;flex-direction:column;gap:14px}
+.phone{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.phone-num{font-size:1.45rem;font-weight:900;font-variant-numeric:tabular-nums;user-select:all}
+.copy{background:none;border:1.5px solid var(--ink);color:var(--ink);border-radius:999px;min-height:44px;padding:0 16px;font:800 .88rem var(--f-body);cursor:pointer;white-space:nowrap}
+.promises{display:flex;flex-wrap:wrap;gap:8px}
+.promises span{font-weight:800;font-size:.85rem;padding:6px 12px;border-radius:999px;border:1.5px solid var(--line);background:var(--paper)}
+
+footer{padding-block:36px 130px;text-align:center;color:var(--ink-soft);font-size:.88rem;display:flex;flex-direction:column;gap:8px;align-items:center}
+footer .logo{font-size:2rem;margin:0}
+
+/* Action bar */
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:30;background:color-mix(in srgb,var(--paper) 92%,transparent);backdrop-filter:blur(10px);border-top:1px solid var(--line);
+  padding:10px max(12px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(12px,env(safe-area-inset-left,0px))}
+.bar-in{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;max-width:560px;margin:0 auto}
+.bar a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;min-height:52px;border-radius:14px;text-decoration:none;font-weight:900;font-size:.8rem;transition:transform .2s var(--ease)}
+.bar a:active{transform:scale(.96)}
+.bar a.main{background:var(--accent);color:var(--on-accent)}
+.bar svg{width:20px;height:20px}
+
+@media (min-width:860px){
+  section{padding-block:88px}
+  .hero{padding-top:44px}
+  .hero-grid{grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:56px}
+  .v-grid{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:56px}
+  .pair{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px}
+  .grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .rail{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));overflow:visible;scroll-snap-type:none}
+  .rail .card{flex:none}
+  .menu-wrap{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:56px;align-items:start}
+  .menu-list{margin-top:0}
+  .v2{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px}
+}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+
+
+<main>
+<section class="hero" aria-labelledby="h1">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="logo" data-in>Gelooo</span>
+      <h1 id="h1" data-in>Homemade gelato in Permas Jaya</h1>
+      <p class="lede" data-in>Small-batch gelato made with Madagascar vanilla, Valrhona chocolate and Babbi pistachio, plus affogato, waffles and cakes baked in the shop.</p>
+      <div class="fact" data-in>
+        <span id="openPill"><span class="dot"></span><span id="openText">Opening hours below</span></span>
+        <span>1 scoop from RM10</span>
+      </div>
+      <div class="actions" data-in>
+        <a class="btn btn-main" href="#voucher">Claim free scoop</a>
+        <a class="btn btn-alt" href="https://www.google.com/maps/search/?api=1&query=Gelooo+23+Jalan+Permas+9%2F5+Bandar+Baru+Permas+Jaya+81750+Masai+Johor" target="_blank" rel="noopener">Get directions</a>
+      </div>
+    </div>
+    <div class="ph tall hero-ph" data-hero-photo><img src="img/tiramisu-affogato.jpg" width="1000" height="1333" alt="Espresso poured over tiramisu affogato with ladyfingers and vanilla gelato"></div>
+  </div>
+</section>
+
+<section class="voucher" id="voucher" aria-labelledby="vTitle">
+  <div class="wrap v-grid">
+    <div class="v-copy">
+      <h2 id="vTitle">Your free scoop voucher</h2>
+      <p class="lede">This code is yours for 7 days from the first time you open this page. Show it at the counter when you pay.</p>
+    </div>
+    <div class="ticket" id="ticket">
+      <div class="t-top">
+        <span class="t-offer">Free One Scoop Gelato</span>
+        <span class="t-worth">Worth RM10</span>
+      </div>
+      <div class="t-bot">
+        <div class="code-row">
+          <span class="code" id="vCode">GLO-····</span>
+          <div><div class="until" id="vUntil">Valid for 7 days</div><div class="count" id="vCount"></div></div>
+        </div>
+        <div class="show" id="vShow">Show this screen at the counter</div>
+        <ul class="terms">
+          <li>Min. spend RM30, dine-in only</li>
+          <li>One voucher per transaction, no cash value</li>
+        </ul>
+        <div class="staff" id="staff"><span>Staff only</span><button type="button" id="redeemBtn">Mark as used</button></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="promise" id="promise" aria-labelledby="pTitle">
+  <div class="wrap">
+    <h2 id="pTitle" class="promise-line"><span class="w">Real</span> <span class="w">ingredients,</span> <span class="w">no</span> <span class="w">shortcuts.</span></h2>
+    <div class="pair">
+      <div class="ph tall"><img src="img/affogato.jpg" width="720" height="960" loading="lazy" alt="Espresso poured over very vanilla gelato for an affogato"></div>
+      <div class="flav-list">
+        <div><b>Vanilla</b><span>Norohy Madagascar vanilla. Clean, creamy, gently sweet. The base of our RM16 affogato.</span></div>
+        <div><b>Valrhona Chocolate</b><span>Deep cocoa with a bittersweet finish.</span></div>
+        <div><b>Pistachio</b><span>Babbi pistachio. Roasted, nutty and smooth.</span></div>
+        <a class="btn btn-alt" href="#voucher" style="align-self:flex-start">Try a scoop free</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="deal" aria-labelledby="dTitle">
+  <div class="wrap">
+    <h2 id="dTitle">Spend RM50, get a free treat</h2>
+    <p class="lede" style="margin-top:12px">A different free item every day when one receipt reaches RM50.</p>
+    <p class="deal-today" id="dealToday">Today's treat</p>
+    <div class="week" id="week"></div>
+    <p class="small">RM50 counted before the 10% service charge. One free item per receipt, regular menu size. Coke float and drinks in selected flavours. Can't be combined with other promotions.</p>
+  </div>
+</section>
+
+<section class="drinks" aria-labelledby="drTitle">
+  <div class="wrap">
+    <div class="treats-head">
+      <h2 id="drTitle">Something to sip</h2>
+      <p class="lede">Matcha, Valrhona chocolate and coffee from Liberty Coffee beans. Swipe to see them all.</p>
+    </div>
+  </div>
+  <div class="rail" tabindex="0" aria-label="Drinks, scroll sideways">
+      <figure class="card"><div class="ph tall"><img src="img/iced-matcha.jpg" width="720" height="960" loading="lazy" alt="Iced matcha latte"></div><figcaption class="meta"><span>Iced matcha latte</span><b>RM15</b></figcaption></figure>
+      <figure class="card"><div class="ph tall"><img src="img/strawberry-matcha.jpg" width="720" height="960" loading="lazy" alt="Strawberry matcha latte"></div><figcaption class="meta"><span>Strawberry matcha latte</span><b>RM17</b></figcaption></figure>
+      <figure class="card"><div class="ph tall"><img src="img/strawberry-chocolate.jpg" width="720" height="960" loading="lazy" alt="Strawberry chocolate"></div><figcaption class="meta"><span>Strawberry chocolate</span><b>RM20</b></figcaption></figure>
+      <figure class="card"><div class="ph tall"><img src="img/ice-chocolate.jpg" width="720" height="960" loading="lazy" alt="Iced chocolate"></div><figcaption class="meta"><span>Iced chocolate</span><b>RM18</b></figcaption></figure>
+      <figure class="card"><div class="ph tall"><img src="img/iced-mocha.jpg" width="720" height="960" loading="lazy" alt="Iced mocha"></div><figcaption class="meta"><span>Iced mocha</span><b>RM18</b></figcaption></figure>
+      <figure class="card"><div class="ph tall"><img src="img/dirty-latte.jpg" width="720" height="960" loading="lazy" alt="Dirty latte"></div><figcaption class="meta"><span>Dirty latte</span><b>RM13</b></figcaption></figure>
+      <figure class="card"><div class="ph tall"><img src="img/warm-latte.jpg" width="720" height="960" loading="lazy" alt="Warm latte"></div><figcaption class="meta"><span>Warm latte</span><b>RM12</b></figcaption></figure>
+      <figure class="card"><div class="ph tall"><img src="img/americano.jpg" width="720" height="960" loading="lazy" alt="Hot Americano"></div><figcaption class="meta"><span>Hot Americano</span><b>RM10</b></figcaption></figure>
+  </div>
+</section>
+
+<section class="treats" aria-labelledby="tTitle">
+  <div class="wrap">
+    <div class="treats-head">
+      <h2 id="tTitle">Baked in the shop</h2>
+      <p class="lede">Baked fresh and best with a scoop on the side. The fudge brownie with gelato is RM30.</p>
+    </div>
+    <div class="grid">
+      <figure class="card"><div class="ph tall"><img src="img/brownie.jpg" width="720" height="960" loading="lazy" alt="Slice of fudge brownie"></div><figcaption class="meta"><span>Fudge brownie</span><b>RM20</b></figcaption></figure>
+      <figure class="card"><div class="ph tall"><img src="img/blueberry-chocolate.jpg" width="720" height="960" loading="lazy" alt="Slice of blueberry chocolate loaf"></div><figcaption class="meta"><span>Blueberry chocolate loaf</span><b>RM16</b></figcaption></figure>
+      <figure class="card"><div class="ph tall"><img src="img/banana-loaf.jpg" width="720" height="960" loading="lazy" alt="Slice of banana loaf"></div><figcaption class="meta"><span>Banana loaf</span><b>RM13</b></figcaption></figure>
+      <figure class="card"><div class="ph tall"><img src="img/marble-cake.jpg" width="720" height="960" loading="lazy" alt="Slice of marble cake"></div><figcaption class="meta"><span>Marble cake</span><b>RM15</b></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="menu" aria-labelledby="mTitle">
+  <div class="wrap menu-wrap">
+    <div class="treats-head">
+      <h2 id="mTitle">Full menu</h2>
+      <p class="lede">Prices in RM. Gelato scoops are dine-in; pints are for take-away.</p>
+    </div>
+    <div class="menu-list">
+      <details open>
+        <summary>Gelato <span class="hint">From RM10 <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></summary>
+        <div class="rows">
+          <div class="row"><span class="n">1 scoop</span><span class="d"></span><span class="p">10</span></div>
+          <div class="row"><span class="n">2 scoops</span><span class="d"></span><span class="p">17</span></div>
+          <div class="row"><span class="n">3 scoops</span><span class="d"></span><span class="p">22</span></div>
+          <div class="sub">Base</div>
+          <div class="row"><span class="n">Cup</span><span class="d"></span><span class="p">Free</span></div>
+          <div class="row"><span class="n">Homemade spice cone</span><span class="d"></span><span class="p">+3</span></div>
+          <div class="row"><span class="n">Cookies sandwich, 2 pcs<span class="tag">New</span></span><span class="d"></span><span class="p">+8</span></div>
+          <div class="row"><span class="n">Butter waffle, half / full</span><span class="d"></span><span class="p">+8 / +13</span></div>
+          <div class="sub">Take-away pint, about 350g</div>
+          <div class="row"><span class="n">Normal flavour</span><span class="d"></span><span class="p">38</span></div>
+          <div class="row"><span class="n">Premium flavour</span><span class="d"></span><span class="p">48</span></div>
+        </div>
+      </details>
+      <details>
+        <summary>Affogato <span class="hint">Best seller <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></summary>
+        <div class="rows">
+          <div class="row"><span class="n">Affogato<small>Hot espresso over Madagascar vanilla gelato</small></span><span class="d"></span><span class="p">16</span></div>
+          <div class="row"><span class="n">Chocolate-gato<small>Valrhona concentrate with Valrhona gelato</small></span><span class="d"></span><span class="p">17</span></div>
+          <div class="row"><span class="n">Matcha / Houjicha-gato</span><span class="d"></span><span class="p">17</span></div>
+          <div class="row"><span class="n">Tiramisu-affogato<small>Ladyfinger, mascarpone, vanilla gelato</small></span><span class="d"></span><span class="p">20</span></div>
+        </div>
+      </details>
+      <details>
+        <summary>Coffee &amp; drinks <span class="hint">From RM10 <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></summary>
+        <div class="rows">
+          <div class="row"><span class="n">Black <small>Americano</small></span><span class="d"></span><span class="p">10</span></div>
+          <div class="row"><span class="n">White <small>Latte</small></span><span class="d"></span><span class="p">12</span></div>
+          <div class="row"><span class="n">Dirty latte</span><span class="d"></span><span class="p">13</span></div>
+          <div class="row"><span class="n">Cold brew</span><span class="d"></span><span class="p">15</span></div>
+          <div class="row"><span class="n">Mocha</span><span class="d"></span><span class="p">18</span></div>
+          <div class="row"><span class="n">Hand brew</span><span class="d"></span><span class="p">Seasonal</span></div>
+          <div class="sub">Not coffee</div>
+          <div class="row"><span class="n">Matcha latte</span><span class="d"></span><span class="p">15</span></div>
+          <div class="row"><span class="n">Vanilla coke float</span><span class="d"></span><span class="p">15</span></div>
+          <div class="row"><span class="n">Strawberry matcha latte</span><span class="d"></span><span class="p">17</span></div>
+          <div class="row"><span class="n">Iced / hot chocolate</span><span class="d"></span><span class="p">18</span></div>
+          <div class="row"><span class="n">Chocolate strawberry</span><span class="d"></span><span class="p">20</span></div>
+          <div class="row"><span class="n">Milkshake of the day</span><span class="d"></span><span class="p">20</span></div>
+          <div class="sub">Tea pot for 2 to 3, refillable</div>
+          <div class="row"><span class="n">Chamomile Blossom, Fruits of Eden, Lemongrass Ginger, Peppermint or Masala Chai</span><span class="d"></span><span class="p">16</span></div>
+        </div>
+      </details>
+      <details>
+        <summary>Sweet treats <span class="hint">From RM8 <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></summary>
+        <div class="rows">
+          <div class="row"><span class="n">Cookies of the day</span><span class="d"></span><span class="p">8</span></div>
+          <div class="row"><span class="n">Butter waffle, half / full</span><span class="d"></span><span class="p">8 / 13</span></div>
+          <div class="row"><span class="n">100% butter cake</span><span class="d"></span><span class="p">13</span></div>
+          <div class="row"><span class="n">Banana loaf</span><span class="d"></span><span class="p">13</span></div>
+          <div class="row"><span class="n">Marble cake</span><span class="d"></span><span class="p">15</span></div>
+          <div class="row"><span class="n">Citrus pound loaf</span><span class="d"></span><span class="p">15</span></div>
+          <div class="row"><span class="n">Chocolate prune cake</span><span class="d"></span><span class="p">16</span></div>
+          <div class="row"><span class="n">Blueberry chocolate loaf</span><span class="d"></span><span class="p">16</span></div>
+          <div class="row"><span class="n">Fudge brownie, with gelato</span><span class="d"></span><span class="p">20 / 30</span></div>
+          <div class="row"><span class="n">Basque burnt cheesecake<span class="tag">Weekend</span></span><span class="d"></span><span class="p">22</span></div>
+          <div class="row"><span class="n">Cookies of the mood</span><span class="d"></span><span class="p">35</span></div>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="visit" id="visit" aria-labelledby="aTitle">
+  <div class="wrap v2">
+    <div style="display:flex;flex-direction:column;gap:18px;min-width:0">
+      <h2 id="aTitle" class="addr-big">23, Jalan Permas 9/5, Permas Jaya</h2>
+      <p class="lede">Bandar Baru Permas Jaya, 81750 Masai, Johor</p>
+      <div class="promises"><span>No artificial flavouring or colouring</span><span>Muslim friendly</span></div>
+      <div class="actions"><a class="btn btn-main" href="https://www.google.com/maps/search/?api=1&query=Gelooo+23+Jalan+Permas+9%2F5+Bandar+Baru+Permas+Jaya+81750+Masai+Johor" target="_blank" rel="noopener">Get directions</a></div>
+    </div>
+    <div class="contact">
+      <table class="hours" aria-label="Opening hours"><tbody id="hoursBody"></tbody></table>
+      <p class="lede" style="font-size:.9rem">Closed 5:30pm to 7pm daily, and all day Wednesday.</p>
+      <div class="phone"><span class="phone-num" id="phoneNum">+60 13-440 4756</span><button class="copy" type="button" id="copyBtn">Copy number</button></div>
+      <div class="actions"><a class="btn btn-alt" href="https://wa.me/60134404756?text=Hi%20Gelooo!%20I%20have%20a%20question." target="_blank" rel="noopener">WhatsApp us</a></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="wrap">
+  <span class="logo">Gelooo</span>
+  <a href="https://www.instagram.com/gelooocafe.jb/" target="_blank" rel="noopener">@gelooocafe.jb on Instagram</a>
+  <span>Promotions depend on availability and may change without notice.</span>
+</footer>
+
+<nav class="bar" aria-label="Quick actions"><div class="bar-in">
+  <a href="tel:+60134404756"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>Call</a>
+  <a class="main" href="https://wa.me/60134404756?text=Hi%20Gelooo!%20I%20have%20a%20question." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z"/></svg>WhatsApp</a>
+  <a href="https://www.google.com/maps/search/?api=1&query=Gelooo+23+Jalan+Permas+9%2F5+Bandar+Baru+Permas+Jaya+81750+Masai+Johor" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>Directions</a>
+</div></nav>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+(function(){
+  const TZ=8*3600e3, DAY=864e5, VALID_DAYS=7, KEY="gelooo_voucher_v1";
+  const DAYS=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], SHORT=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+  const DEALS={1:["Waffle Monday","a free full-portion waffle"],2:["Coke Float Tuesday","a free Coke float"],3:null,
+    4:["Latte Thursday","a free regular latte, hot or iced"],5:["Fizzy Friday","a free regular mocktail or soda"],
+    6:["Scoop Saturday","a free single scoop of gelato"],0:["Cone Sunday","a free waffle cone"]};
+  const HOURS={0:[[750,1050],[1140,1320]],1:[[750,1050],[1140,1320]],2:[[750,1050],[1140,1320]],3:null,
+    4:[[750,1050],[1140,1320]],5:[[750,1050],[1140,1380]],6:[[750,1050],[1140,1380]]};
+  const fmt=m=>{let h=Math.floor(m/60),mm=m%60,ap=h>=12?"pm":"am";h=h%12||12;return h+(mm?":"+String(mm).padStart(2,"0"):"")+ap;};
+  const now=new Date(Date.now()+TZ), dow=now.getUTCDay(), mins=now.getUTCHours()*60+now.getUTCMinutes();
+
+  // Open now
+  const pill=document.getElementById("openPill"), ot=document.getElementById("openText"), t=HOURS[dow];
+  let txt="Closed today, open again tomorrow";
+  if(t){const cur=t.find(([a,b])=>mins>=a&&mins<b), nx=t.find(([a])=>mins<a);
+    if(cur){pill.classList.add("is-open");txt="Open now until "+fmt(cur[1]);}
+    else if(nx) txt="Opens today at "+fmt(nx[0]); else txt="Closed for today";}
+  ot.textContent=txt;
+
+  // Hours table, Monday first
+  const tb=document.getElementById("hoursBody");
+  [1,2,3,4,5,6,0].forEach(d=>{const tr=document.createElement("tr");if(d===dow)tr.className="today";const h=HOURS[d];
+    tr.innerHTML="<td>"+DAYS[d]+"</td><td>"+(h?h.map(([a,b])=>fmt(a)+" to "+fmt(b)).join(", "):"Closed")+"</td>";tb.appendChild(tr);});
+
+  // Deal
+  const dl=DEALS[dow], dt=document.getElementById("dealToday");
+  if(dl){dt.textContent="";const e=document.createElement("em");e.textContent=dl[0];dt.append(e," means "+dl[1]+" today.");}
+  else dt.textContent="We're closed on Wednesdays. See you Thursday.";
+  const wk=document.getElementById("week");
+  [1,2,3,4,5,6,0].forEach(d=>{const s=document.createElement("span");s.textContent=SHORT[d];if(d===dow)s.classList.add("today");if(d===3)s.classList.add("off");wk.appendChild(s);});
+
+  // Voucher: code and first-open date kept on this phone, expiry 23:59 MYT on day 7 after first open
+  const store={get(){try{return JSON.parse(localStorage.getItem(KEY));}catch(e){return null;}},set(v){try{localStorage.setItem(KEY,JSON.stringify(v));}catch(e){}}};
+  const AL="ABCDEFGHJKMNPQRSTUVWXYZ23456789";
+  const mk=()=>{const r=new Uint32Array(4);try{crypto.getRandomValues(r);}catch(e){r.forEach((_,i)=>r[i]=Math.floor(Math.random()*1e9));}return "GLO-"+[...r].map(n=>AL[n%AL.length]).join("");};
+  let v=store.get(); if(!v||!v.code||!v.first){v={code:mk(),first:Date.now(),used:false};store.set(v);}
+  const f=new Date(v.first+TZ), exp=Date.UTC(f.getUTCFullYear(),f.getUTCMonth(),f.getUTCDate())-TZ+(VALID_DAYS+1)*DAY-1000;
+  const fd=x=>new Date(x+TZ).toLocaleDateString("en-GB",{weekday:"short",day:"numeric",month:"short",year:"numeric",timeZone:"UTC"});
+  const tk=document.getElementById("ticket"),code=document.getElementById("vCode"),until=document.getElementById("vUntil"),cnt=document.getElementById("vCount"),show=document.getElementById("vShow"),staff=document.getElementById("staff");
+  code.textContent=v.code;
+  function render(){const left=exp-Date.now();
+    if(v.used){tk.classList.add("done");until.textContent="Used";cnt.textContent="";show.textContent="Redeemed. Thank you for visiting!";staff.hidden=true;return;}
+    if(left<=0){tk.classList.add("done");until.textContent="Expired "+fd(exp);cnt.textContent="";show.textContent="This voucher has expired. Follow @gelooocafe.jb for the next one.";staff.hidden=true;return;}
+    until.textContent="Valid until "+fd(exp);const d=Math.floor(left/DAY),h=Math.floor(left%DAY/36e5),m=Math.floor(left%36e5/6e4);cnt.textContent=(d?d+"d ":"")+h+"h "+m+"m left";}
+  render(); setInterval(render,30000);
+  const rb=document.getElementById("redeemBtn");let armed=false,tm;
+  rb.addEventListener("click",()=>{if(!armed){armed=true;rb.textContent="Tap again to confirm";rb.classList.add("armed");tm=setTimeout(()=>{armed=false;rb.textContent="Mark as used";rb.classList.remove("armed");},4000);return;}
+    clearTimeout(tm);v.used=true;v.usedAt=Date.now();store.set(v);render();});
+
+  // One menu list open at a time
+  const ds=[...document.querySelectorAll(".menu-list details")];
+  ds.forEach(d=>d.addEventListener("toggle",()=>{if(d.open)ds.forEach(o=>{if(o!==d)o.open=false;});}));
+
+  // Copy phone
+  const cb=document.getElementById("copyBtn");
+  cb.addEventListener("click",()=>{const ok=()=>{cb.textContent="Copied";setTimeout(()=>cb.textContent="Copy number",2000);};
+    const sel=()=>{const r=document.createRange();r.selectNodeContents(document.getElementById("phoneNum"));const s=getSelection();s.removeAllRanges();s.addRange(r);cb.textContent="Selected";};
+    try{navigator.clipboard.writeText("+60134404756").then(ok,sel);}catch(e){sel();}});
+
+  // Motion (GSAP): hero enters once; the promise words light up as the reader scrolls through that section.
+  if(!window.gsap) return;
+  const mm=gsap.matchMedia();
+  mm.add("(prefers-reduced-motion: no-preference)",()=>{
+    const tl=gsap.timeline({defaults:{ease:"power3.out",duration:.8}});
+    tl.from("[data-in]",{y:22,opacity:0,stagger:.08})
+      .from("[data-hero-photo]",{scale:.94,opacity:0,duration:1},"<.1")
+      .from("[data-hero-photo] img",{scale:1.12,duration:1.4},"<");
+    if(window.ScrollTrigger){
+      gsap.registerPlugin(ScrollTrigger);
+      document.documentElement.classList.add("js-moment");
+      const ws=gsap.utils.toArray(".promise-line .w");
+      const st=gsap.to(ws,{color:getComputedStyle(document.documentElement).getPropertyValue("--ink").trim(),stagger:.4,ease:"none",
+        scrollTrigger:{trigger:".promise-line",start:"top 82%",end:"top 32%",scrub:.6}});
+      return ()=>{document.documentElement.classList.remove("js-moment");};
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
